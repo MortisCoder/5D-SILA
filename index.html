@@ -2,81 +2,162 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>5-Д класс</title>
-	<link rel="stylesheet" href="5Д.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Д класс</title>
+    <style>
+        /* Основные стили */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0.5rem 0;
+        }
+
+        .main-content, .class-statistics, .theme-toggle {
+            margin: 1rem auto;
+            padding: 1rem;
+            max-width: 600px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .theme-toggle {
+            text-align: center;
+        }
+
+        .theme-toggle button {
+            padding: 0.5rem 1rem;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .theme-toggle button:hover {
+            background: #45a049;
+        }
+
+        /* Темная тема */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f4f4f9;
+        }
+
+        body.dark-mode header {
+            background: #333;
+        }
+
+        body.dark-mode .main-content, 
+        body.dark-mode .class-statistics, 
+        body.dark-mode .theme-toggle {
+            background: #1e1e1e;
+            color: #f4f4f9;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-mode .theme-toggle button {
+            background: #333;
+        }
+
+        body.dark-mode .theme-toggle button:hover {
+            background: #444;
+        }
+    </style>
 </head>
 
 <body>
-	<header>
-		<h1>Привет, это 5-Д класс!</h1>
-	</header>
+    <header>
+        <h1>Привет, это 5-Д класс!</h1>
+    </header>
 
-	<section class="main-content">
-		<h2>Список учеников:</h2>
-		<ul>
-			<li>Абдрасаков Нуриман</li>
-			<li>Абдымуталиев Арсен</li>
-			<li>Айтназаров Нурсултан</li>
-			<li>Айтыгулова Аделина</li>
-			<li>Алмазов Эйнар</li>
-			<li>Анарбаев Алихан</li>
-			<li>Анарбаев Рамазан</li>
-			<li>Асанов Элмар</li>
-			<li>Аскарбекова Акылай</li>
-			<li>Аскат кызы Каныкей</li>
-			<li>Аскеров Ислам</li>
-			<li>Байдоолотов Түгөлбай</li>
-			<li>Бактыбеков Тагай</li>
-			<li>Бакытбекова Каухар</li>
-			<li>Бекмырзаева Чолпонай</li>
-			<li>Жанышев Ай-теңир</li>
-			<li>Жолдошбекова Санира</li>
-			<li>Жумакунов Жанат</li>
-			<li>Идрисова Салима</li>
-			<li>Ильичбекова Камила</li>
-			<li>Калмаматова Амина</li>
-			<li>Керимбекова Элина</li>
-			<li>Мансуров Санжар</li>
-			<li>Маратов Улукмырза</li>
-			<li>Миргазиева Халима</li>
-			<li>Муратов Элдар</li>
-			<li>Намазбеков Бейше</li>
-			<li>Нурбеков Эллан</li>
-			<li>Нурболотов Нурнасип</li>
-			<li>Сабырбекова Мырзайым</li>
-			<li>Табалдиева Сабина</li>
-			<li>Турдубеков Нуриман</li>
-			<li>Төлömүшөв Кайрат</li>
-			<li>Эсенбекова Каныкей</li>
-		</ul>
-	</section>
+    <section class="main-content">
+        <h2>Список учеников:</h2>
+        <ul>
+            <li>Абдрасаков Нуриман</li>
+            <li>Абдымуталиев Арсен</li>
+            <li>Айтназаров Нурсултан</li>
+            <li>Айтыгулова Аделина</li>
+            <li>Алмазов Эйнар</li>
+            <li>Анарбаев Алихан</li>
+            <li>Анарбаев Рамазан</li>
+            <li>Асанов Элмар</li>
+            <li>Аскарбекова Акылай</li>
+            <li>Аскат кызы Каныкей</li>
+            <li>Аскеров Ислам</li>
+            <li>Байдоолотов Түгөлбай</li>
+            <li>Бактыбеков Тагай</li>
+            <li>Бакытбекова Каухар</li>
+            <li>Бекмырзаева Чолпонай</li>
+            <li>Жанышев Ай-теңир</li>
+            <li>Жолдошбекова Санира</li>
+            <li>Жумакунов Жанат</li>
+            <li>Идрисова Салима</li>
+            <li>Ильичбекова Камила</li>
+            <li>Калмаматова Амина</li>
+            <li>Керимбекова Элина</li>
+            <li>Мансуров Санжар</li>
+            <li>Маратов Улукмырза</li>
+            <li>Миргазиева Халима</li>
+            <li>Муратов Элдар</li>
+            <li>Намазбеков Бейше</li>
+            <li>Нурбеков Эллан</li>
+            <li>Нурболотов Нурнасип</li>
+            <li>Сабырбекова Мырзайым</li>
+            <li>Табалдиева Сабина</li>
+            <li>Турдубеков Нуриман</li>
+            <li>Төлömүшөв Кайрат</li>
+            <li>Эсенбекова Каныкей</li>
+        </ul>
+    </section>
 
-	<!-- Статистика класса -->
-	<section class="class-statistics">
-		<h2>Статистика класса:</h2>
-		<p><strong>Общее количество учеников:</strong> 34</p>
-		<p><strong>Количество мальчиков:</strong> 20</p>
-		<p><strong>Количество девочек:</strong> 14</p>
-	</section>
+    <section class="class-statistics">
+        <h2>Статистика класса:</h2>
+        <p><strong>Общее количество учеников:</strong> 34</p>
+        <p><strong>Количество мальчиков:</strong> 20</p>
+        <p><strong>Количество девочек:</strong> 14</p>
+    </section>
 
-	<!-- Переключатель темы -->
-	<section class="theme-toggle">
-		<button id="toggle-theme">Переключить тему</button>
-	</section>
+    <section class="theme-toggle">
+        <button id="toggle-theme">Переключить тему</button>
+    </section>
 
-	<script src="5Д.js"></script>
-	<script>
-		// Получаем кнопку для переключения темы
-		const toggleButton = document.getElementById('toggle-theme');
+    <script>
+        // Получаем кнопку для переключения темы
+        const toggleButton = document.getElementById('toggle-theme');
 
-		// Обработчик клика по кнопке
-		toggleButton.addEventListener('click', () => {
-			// Переключаем класс 'dark-mode' на body
-			document.body.classList.toggle('dark-mode');
-		});
-	</script>
+        // Обработчик клика по кнопке
+        toggleButton.addEventListener('click', () => {
+            // Переключаем класс 'dark-mode' на body
+            document.body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 
 </html>
